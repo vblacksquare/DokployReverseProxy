@@ -6,7 +6,7 @@ import uvicorn
 from config import BASEURL
 
 app = FastAPI()
-
+#hui
 
 @app.get("/{path:path}")
 async def redirect_all(path: str, request: Request):
