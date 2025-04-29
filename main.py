@@ -7,6 +7,12 @@ from config import BASEURL
 
 app = FastAPI()
 
+
+@app.get("/qwe")
+async def qwe():
+    print(123)
+
+
 @app.get("/{path:path}")
 async def redirect_all(path: str, request: Request):
     referer = request.headers.get("Referer")
