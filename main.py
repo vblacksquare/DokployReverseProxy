@@ -6,11 +6,11 @@ import uvicorn
 from config import BASEURL
 
 app = FastAPI()
-#hui
 
 @app.get("/{path:path}")
 async def redirect_all(path: str, request: Request):
     referer = request.headers.get("Referer")
+    print(path, referer)
 
     if referer and "dokploy" in referer:
         return RedirectResponse(url=f"/{BASEURL}/{path}")
